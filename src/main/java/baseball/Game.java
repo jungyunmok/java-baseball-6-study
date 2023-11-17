@@ -13,6 +13,16 @@ public class Game {
         this.computerNumbers = computerNumber.getNumbers();
     }
 
+    public void play(String input) {
+        try {
+            int inputNumbers = checkInt(input);
+            checkNumber(inputNumbers);
+            judgement();
+        } catch (IllegalArgumentException e) {
+            System.out.println("[ERROR] 1부터 9까지 중복되지 않는 3자리 숫자를 입력해주세요.");
+        }
+    }
+
     public int checkInt(String input) {
         int inputNumbers;
         try {
