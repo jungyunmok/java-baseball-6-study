@@ -5,6 +5,10 @@ import camp.nextstep.edu.missionutils.Console;
 public class OutputView {
     Game game;
 
+    public OutputView(Game game) {
+        this.game = game;
+    }
+
     public boolean printResult(String result) {
         boolean gameStart = true;
         System.out.println(result);

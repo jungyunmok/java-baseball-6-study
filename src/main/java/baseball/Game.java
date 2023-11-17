@@ -6,8 +6,8 @@ import java.util.List;
 public class Game {
     private List<Integer> userNumbers;
     private List<Integer> computerNumbers;
-    private int strike = 0;
-    private int ball = 0;
+    private int strike;
+    private int ball;
 
     public Game(ComputerNumber computerNumber) {
         this.computerNumbers = computerNumber.getNumbers();
@@ -41,7 +41,7 @@ public class Game {
         }
         userNumbers = new ArrayList<>();
         int number = 0;
-        for (int i = 100; i > 0; i = i / 10) {
+        for (int i = 1000; i >= 10; i = i / 10) {
             number = (inputNumbers % i * 10) / i;
             if (userNumbers.contains(number) || number == 0) {
                 throw new IllegalArgumentException("[ERROR] 잘못된 숫자 입력");
@@ -51,11 +51,9 @@ public class Game {
     }
 
     public String judgement() {
-        for (int i = 0; i < computerNumbers.size(); i++) {
-            for (int j = 0; j < userNumbers.size(); j++) {
-                count(computerNumbers.get(i), i, userNumbers.get(j), j);
-            }
-        }
+        strike = 0;
+        ball = 0;
+        count();
         if (strike > 0) {
             if (ball > 0) {
                 return strike + "스트라이크 " + ball + "볼";
@@ -67,9 +65,17 @@ public class Game {
         return "낫싱";
     }
 
-    public void count(int computerNum, int computerIndex, int userNum, int userIndex) {
-        if (computerNum == userNum) {
-            if (computerIndex == userIndex) {
+    public void count() {
+        for (int i = 0; i < computerNumbers.size(); i++) {
+            for (int j = 0; j < userNumbers.size();j++) {
+                correctNumber(i,computerNumbers.get(i),j,userNumbers.get(j));
+            }
+        }
+    }
+
+    public void correctNumber(int comIndex, int comNumber, int userIndex, int userNumber) {
+        if (comNumber == userNumber) {
+            if (comIndex == userIndex) {
                 strike++;
                 return;
             }

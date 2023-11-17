@@ -13,4 +13,4 @@
     - [x] 1 입력시 게임 재시작
     - [x] 2 입력시 게임 종료
 - [x] 사용자에게 3자리 수 입력받기 InputView#readNumber
-- [ ] 게임 진행 상황 출력하기 OutputView#printResult
+- [x] 게임 진행 상황 출력하기 OutputView#printResult
