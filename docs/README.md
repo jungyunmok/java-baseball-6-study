@@ -2,8 +2,8 @@
 - [x] 1에서 9까지 서로 다른 임의의 수 3개 뽑기 ComputerNumber#randomGenerator
 - [ ] 게임 반복 실행 Game#play
 - [ ] 사용자 입력값 검증하기
-  - [ ] 숫자가 맞는지 확인 Game#checkInt
-  - [ ] 중복되지 않는지 확인 Game#checkNumber
+  - [x] 숫자가 맞는지 확인 Game#checkInt
+  - [x] 중복되지 않는지 확인 Game#checkNumber
   - [ ] 잘못된 값 입력시 IllegalArgumentException 발생 후 "[ERROR]" 메시지 표시하고 다시 입력받기
 - [ ] 사용자 입력값 판단하기 Game#judgement
   - [ ] 같은 수가 같은 자리에 있으면 스트라이크

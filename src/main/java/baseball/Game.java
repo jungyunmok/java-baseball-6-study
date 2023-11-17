@@ -11,7 +11,7 @@ public class Game {
         try {
             inputNumbers = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(e);
+            throw new IllegalArgumentException("[ERROR] 숫자 이외의 값 입력");
         }
         userNumbers = new ArrayList<>();
         userNumbers.add(checkNumber(inputNumbers));
@@ -19,7 +19,17 @@ public class Game {
     }
 
     public int checkNumber(int inputNumbers) {
-        return 0;
+        if(inputNumbers < 0) {
+            throw new IllegalArgumentException("[ERROR] 잘못된 숫자 입력");
+        }
+        int number = 0;
+        for (int i = 100; i > 0; i = i / 10) {
+            number = (inputNumbers % i * 10) / i;
+            if (userNumbers.contains(number) || number == 0) {
+                throw new IllegalArgumentException("[ERROR] 잘못된 숫자 입력");
+            }
+        }
+        return number;
 
     }
 }
