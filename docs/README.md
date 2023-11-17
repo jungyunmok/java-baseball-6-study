@@ -1,0 +1,16 @@
+# 기능 요구 사항
+- [x] 1에서 9까지 서로 다른 임의의 수 3개 뽑기 ComputerNumber#randomGenerator
+- [x] 게임 실행 Game#play
+- [x] 사용자 입력값 검증하기
+  - [x] 숫자가 맞는지 확인 Game#checkInt
+  - [x] 중복되지 않는지 확인 Game#checkNumber
+  - [x] 잘못된 값 입력시 IllegalArgumentException 발생 후 "[ERROR]" 메시지 표시하고 다시 입력받기
+- [x] 사용자 입력값 판단하기 Game#judgement
+  - [x] 같은 수가 같은 자리에 있으면 스트라이크 Game#Count
+  - [x] 같은 수가 다른 자리에 있으면 볼
+  - [x] 같은 수가 전혀 없으면 낫싱
+- [x] 게임이 끝난 후 재시작/종료 여부 입력 Game#retry
+    - [x] 1 입력시 게임 재시작
+    - [x] 2 입력시 게임 종료
+- [x] 사용자에게 3자리 수 입력받기 InputView#readNumber
+- [x] 게임 진행 상황 출력하기 OutputView#printResult
