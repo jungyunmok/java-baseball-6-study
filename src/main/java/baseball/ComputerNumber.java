@@ -18,7 +18,7 @@ public class ComputerNumber {
     }
 
     private void randomGenerator() {
-        while (numbers.size() < 3) {
+        while (numbers.size() < Constant.MAXRANGE) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
             if (!numbers.contains(randomNumber)) {
                 numbers.add(randomNumber);
