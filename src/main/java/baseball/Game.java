@@ -38,7 +38,7 @@ public class Game {
     }
 
     public void checkNumber(int inputNumbers) {
-        if (inputNumbers < 0) {
+        if (inputNumbers < 0 || inputNumbers > 987) {
             throw new IllegalArgumentException("[ERROR] 잘못된 숫자 입력");
         }
         userNumbers = new ArrayList<>();
