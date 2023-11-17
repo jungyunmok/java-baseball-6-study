@@ -12,5 +12,5 @@
 - [x] 게임이 끝난 후 재시작/종료 여부 입력 Game#retry
     - [x] 1 입력시 게임 재시작
     - [x] 2 입력시 게임 종료
-- [ ] 사용자에게 3자리 수 입력받기 InputView#readNumber
+- [x] 사용자에게 3자리 수 입력받기 InputView#readNumber
 - [ ] 게임 진행 상황 출력하기 OutputView#printResult
