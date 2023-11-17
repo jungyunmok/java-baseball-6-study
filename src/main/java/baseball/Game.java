@@ -5,6 +5,13 @@ import java.util.List;
 
 public class Game {
     private List<Integer> userNumbers;
+    private List<Integer> computerNumbers;
+    private int strike = 0;
+    private int ball = 0;
+
+    public Game(ComputerNumber computerNumber) {
+        this.computerNumbers = computerNumber.getNumbers();
+    }
 
     public int checkInt(String input) {
         int inputNumbers;
@@ -32,7 +39,29 @@ public class Game {
     }
 
     public String judgement() {
+        for (int i = 0; i < computerNumbers.size(); i++) {
+            for (int j = 0; j < userNumbers.size(); j++) {
+                count(computerNumbers.get(i), i, userNumbers.get(j), j);
+            }
+        }
+        if (strike > 0) {
+            if (ball > 0) {
+                return strike + "스트라이크 " + ball + "볼";
+            }
+            return strike + "스트라이크";
+        }
+        if (ball > 0)
+            return ball + "볼";
+        return "낫싱";
+    }
 
-        return "";
+    public void count(int computerNum, int computerIndex, int userNum, int userIndex) {
+        if (computerNum == userNum) {
+            if (computerIndex == userIndex) {
+                strike++;
+                return;
+            }
+            ball++;
+        }
     }
 }

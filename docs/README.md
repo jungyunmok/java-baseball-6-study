@@ -5,10 +5,10 @@
   - [x] 숫자가 맞는지 확인 Game#checkInt
   - [x] 중복되지 않는지 확인 Game#checkNumber
   - [ ] 잘못된 값 입력시 IllegalArgumentException 발생 후 "[ERROR]" 메시지 표시하고 다시 입력받기
-- [ ] 사용자 입력값 판단하기 Game#judgement
-  - [ ] 같은 수가 같은 자리에 있으면 스트라이크
-  - [ ] 같은 수가 다른 자리에 있으면 볼
-  - [ ] 같은 수가 전혀 없으면 낫싱
+- [x] 사용자 입력값 판단하기 Game#judgement
+  - [x] 같은 수가 같은 자리에 있으면 스트라이크 Game#Count
+  - [x] 같은 수가 다른 자리에 있으면 볼
+  - [x] 같은 수가 전혀 없으면 낫싱
 - [ ] 게임이 끝난 후 재시작/종료 여부 입력 Game#exitOrReplay
     - [ ] 1 입력시 게임 재시작
     - [ ] 2 입력시 게임 종료
