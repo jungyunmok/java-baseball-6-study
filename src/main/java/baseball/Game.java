@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
+    ComputerNumber computerNumber;
     private List<Integer> userNumbers;
     private List<Integer> computerNumbers;
     private int strike;
     private int ball;
 
     public Game(ComputerNumber computerNumber) {
+        this.computerNumber = computerNumber;
         this.computerNumbers = computerNumber.getNumbers();
     }
 
@@ -86,8 +88,10 @@ public class Game {
     public boolean retry(String input) {
         try {
             int number = checkInt(input);
-            if (number == 1)
+            if (number == 1) {
+                computerNumber.randomGenerator();
                 return true;
+            }
             if (number == 2)
                 return false;
             throw new IllegalArgumentException("[ERROR] 잘못된 숫자 입력");
