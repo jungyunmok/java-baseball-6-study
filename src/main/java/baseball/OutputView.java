@@ -9,6 +9,12 @@ public class OutputView {
         this.game = game;
     }
 
+    /**
+     * 결과 출력하고 재시작 여부 확인
+     *
+     * @param result
+     * @return
+     */
     public boolean printResult(String result) {
         boolean gameStart = true;
         System.out.println(result);

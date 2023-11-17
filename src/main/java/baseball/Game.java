@@ -15,6 +15,12 @@ public class Game {
         this.computerNumbers = computerNumber.getNumbers();
     }
 
+    /**
+     * 게임 실행 후 결과 반환
+     *
+     * @param input
+     * @return
+     */
     public String play(String input) {
         String result = "";
         try {
@@ -27,6 +33,12 @@ public class Game {
         return result;
     }
 
+    /**
+     * String to int 변환
+     *
+     * @param input
+     * @return
+     */
     public int checkInt(String input) {
         int inputNumbers;
         try {
@@ -37,6 +49,11 @@ public class Game {
         return inputNumbers;
     }
 
+    /**
+     * 1~9 사이인지, 중복되지 않는 숫자인지 확인
+     *
+     * @param inputNumbers
+     */
     public void checkNumber(int inputNumbers) {
         if (inputNumbers < 0 || inputNumbers > 987) {
             throw new IllegalArgumentException("[ERROR] 잘못된 숫자 입력");
@@ -52,6 +69,11 @@ public class Game {
         }
     }
 
+    /**
+     * 스트라이크, 볼, 낫싱 여부 판단
+     *
+     * @return
+     */
     public String judgement() {
         strike = 0;
         ball = 0;
@@ -67,14 +89,25 @@ public class Game {
         return "낫싱";
     }
 
+    /**
+     * 컴퓨터 값과 사용자 입력값 비교
+     */
     public void count() {
         for (int i = 0; i < computerNumbers.size(); i++) {
-            for (int j = 0; j < userNumbers.size();j++) {
-                correctNumber(i,computerNumbers.get(i),j,userNumbers.get(j));
+            for (int j = 0; j < userNumbers.size(); j++) {
+                correctNumber(i, computerNumbers.get(i), j, userNumbers.get(j));
             }
         }
     }
 
+    /**
+     * 컴퓨터와 사용자 입력값 비교 후 스트라이크, 볼 값 올리기
+     *
+     * @param comIndex
+     * @param comNumber
+     * @param userIndex
+     * @param userNumber
+     */
     public void correctNumber(int comIndex, int comNumber, int userIndex, int userNumber) {
         if (comNumber == userNumber) {
             if (comIndex == userIndex) {
@@ -85,6 +118,12 @@ public class Game {
         }
     }
 
+    /**
+     * 1 입력시 재시작, 2 입력시 게임 종료
+     *
+     * @param input
+     * @return
+     */
     public boolean retry(String input) {
         try {
             int number = checkInt(input);
