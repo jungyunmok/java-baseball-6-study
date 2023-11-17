@@ -14,16 +14,15 @@ public class ComputerNumber {
 
     public ComputerNumber() {
         numbers = new ArrayList<>();
-        numbers = randomGenerator();
+        randomGenerator();
     }
 
-    private List<Integer> randomGenerator() {
+    private void randomGenerator() {
         while (numbers.size() < 3) {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
             if (!numbers.contains(randomNumber)) {
                 numbers.add(randomNumber);
             }
         }
-        return numbers;
     }
 }
