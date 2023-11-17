@@ -74,4 +74,17 @@ public class Game {
             ball++;
         }
     }
+
+    public boolean retry(String input) {
+        try {
+            int number = checkInt(input);
+            if (number == 1)
+                return true;
+            if (number == 2)
+                return false;
+            throw new IllegalArgumentException("[ERROR] 잘못된 숫자 입력");
+        } catch (IllegalArgumentException e) {
+            System.out.println("[ERROR] 1 혹은 2를 입력해주세요.");
+        }
+    }
 }
