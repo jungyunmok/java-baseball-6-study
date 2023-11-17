@@ -14,7 +14,9 @@ public class Game {
             throw new IllegalArgumentException("[ERROR] 숫자 이외의 값 입력");
         }
         userNumbers = new ArrayList<>();
-        userNumbers.add(checkNumber(inputNumbers));
+        while (userNumbers.size() < Constant.MAXRANGE) {
+            userNumbers.add(checkNumber(inputNumbers));
+        }
         return userNumbers;
     }
 
