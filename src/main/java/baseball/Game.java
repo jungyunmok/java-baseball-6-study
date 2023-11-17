@@ -88,6 +88,6 @@ public class Game {
         } catch (IllegalArgumentException e) {
             System.out.println("[ERROR] 1 혹은 2를 입력해주세요.");
         }
-        return false;
+        return true;
     }
 }
