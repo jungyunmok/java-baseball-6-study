@@ -1,5 +1,5 @@
 # 기능 요구 사항
-- [ ] 1에서 9까지 서로 다른 임의의 수 3개 뽑기 ComputerNumber#randomGenerator
+- [x] 1에서 9까지 서로 다른 임의의 수 3개 뽑기 ComputerNumber#randomGenerator
 - [ ] 게임 반복 실행 Game#play
 - [ ] 사용자 입력값 검증하기
   - [ ] 숫자가 맞는지 확인 Game#checkInt
